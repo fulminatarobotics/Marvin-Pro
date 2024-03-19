@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsaieocvuwi64"]
+
+[ext_resource type="Script" path="res://setGlobalDim.gd" id="1_s147x"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_s147x")
+
+[node name="WidthSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 134.0
+offset_bottom = 41.0
+value = 12.0
+prefix = "Width:"
+suffix = "in"
+
+[node name="LengthSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 51.0
+offset_right = 134.0
+offset_bottom = 82.0
+value = 12.0
+prefix = "Length:"
+suffix = "in"
+
+[node name="HeightSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 92.0
+offset_right = 134.0
+offset_bottom = 123.0
+value = 12.0
+prefix = "Height"
+suffix = "in"
+
+[connection signal="value_changed" from="CanvasLayer/WidthSelection" to="CanvasLayer" method="_on_width_selection_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/LengthSelection" to="CanvasLayer" method="_on_length_selection_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/HeightSelection" to="CanvasLayer" method="_on_height_selection_value_changed"]

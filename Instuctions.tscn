@@ -1,0 +1,1323 @@
+[gd_scene load_steps=35 format=3 uid="uid://cs528w5hgukl8"]
+
+[ext_resource type="Script" path="res://Instuctions.gd" id="1_n5p7j"]
+[ext_resource type="FontFile" uid="uid://f83niatbx2y" path="res://new_font_file.tres" id="1_ww6qy"]
+[ext_resource type="Texture2D" uid="uid://dag41c33ib3oj" path="res://Logo Color Transparent.png" id="2_0jryd"]
+[ext_resource type="PackedScene" uid="uid://dqcmm4ycgja38" path="res://input_button.tscn" id="3_frumc"]
+[ext_resource type="Script" path="res://input_settings.gd" id="3_x32rg"]
+[ext_resource type="Script" path="res://Credits.gd" id="4_hc6b3"]
+[ext_resource type="Texture2D" uid="uid://d2oq8sd186jg2" path="res://textures/dogos.jpg" id="4_k3yt4"]
+[ext_resource type="Texture2D" uid="uid://bbrwtctqigmvl" path="res://Pearl.png" id="5_317qd"]
+[ext_resource type="Texture2D" uid="uid://ccc0vgfok1mj1" path="res://Screenshot_20240201-200834.jpg" id="5_nivvl"]
+[ext_resource type="Script" path="res://textColor.gd" id="5_tld2m"]
+[ext_resource type="Gradient" uid="uid://rja888lj2ro5" path="res://Gradient.tres" id="6_1ue4h"]
+[ext_resource type="Texture2D" uid="uid://b5a6o1d3jcwwc" path="res://OrthographicExample.png" id="6_3rbi3"]
+[ext_resource type="PackedScene" uid="uid://om0qffpmo2xy" path="res://expandInstructionsButton.tscn" id="6_uyi2y"]
+[ext_resource type="Texture2D" uid="uid://ck5ff5envsp8f" path="res://PerspectiveExample.png" id="7_x5cab"]
+[ext_resource type="Texture2D" uid="uid://cnitidccl8xki" path="res://GhostBlockExample.png" id="8_u6lfk"]
+[ext_resource type="Texture2D" uid="uid://clivswf4yqdxd" path="res://HeadingExample.png" id="9_vlj66"]
+[ext_resource type="Texture2D" uid="uid://dwoyu8eyx5tki" path="res://TangentExample.png" id="10_1nf1n"]
+[ext_resource type="Texture2D" uid="uid://ke8dx0gxuiva" path="res://OrderExample.png" id="11_1fl74"]
+[ext_resource type="Texture2D" uid="uid://c5ll63bck43jv" path="res://moveOrderExample.png" id="12_p5tqm"]
+[ext_resource type="Texture2D" uid="uid://brxxjxv4be3tp" path="res://CoordnateExample.png" id="13_grn1t"]
+[ext_resource type="Texture2D" uid="uid://bbio8s2gl60g4" path="res://ToolbarExample.png" id="14_5h0x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v70vw"]
+bg_color = Color(0, 0.552941, 0.486275, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.341176, 0.305882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_ot3kc"]
+base_font = ExtResource("1_ww6qy")
+variation_embolden = 1.2
+
+[sub_resource type="FontVariation" id="FontVariation_6oe8i"]
+base_font = ExtResource("1_ww6qy")
+variation_embolden = 1.2
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_wxwwg"]
+base_font = ExtResource("1_ww6qy")
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpmpn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iop4f"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="Theme" id="Theme_ss0b6"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/bold_italics_font_size = 16
+RichTextLabel/font_sizes/italics_font_size = 16
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_ot3kc")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_6oe8i")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_wxwwg")
+RichTextLabel/fonts/mono_font = ExtResource("1_ww6qy")
+RichTextLabel/fonts/normal_font = ExtResource("1_ww6qy")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_hpmpn")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_iop4f")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mypsx"]
+
+[sub_resource type="Animation" id="Animation_lc5jf"]
+resource_name = "FoldInSettings"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(280, -0.25, 0, 0.25, 0, 280, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -750, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kpiov"]
+resource_name = "FoldOutSettings"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(280, -0.25, 0, 0.25, 0, 280, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-750, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rp3xt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(280, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-750, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d752u"]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(280, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ppwqk"]
+_data = {
+"FoldInSettings": SubResource("Animation_lc5jf"),
+"FoldOutSettings": SubResource("Animation_kpiov"),
+"RESET": SubResource("Animation_rp3xt"),
+"start": SubResource("Animation_d752u")
+}
+
+[node name="InstructionsMaster" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n5p7j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_priority = -1
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+z_index = 1
+offset_left = 280.0
+offset_top = -750.0
+offset_right = 1000.0
+offset_bottom = -30.0
+mouse_filter = 1
+
+[node name="ScrollConainer" type="ScrollContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 707.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="ContainerManager" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer"]
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 2
+alignment = 1
+
+[node name="Heading" type="PanelContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v70vw")
+
+[node name="Organizer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Heading"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Heading/Organizer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center] Welcome to[font=res://Alphabet Soup.ttf] [font_size=60]Marvin[font=res://new_font_file.tres][font_size=20]
+Made by team: 16597 Fulminata
+"
+
+[node name="FulminataImage" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Heading/Organizer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_0jryd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Credits" type="PanelContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager"]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v70vw")
+script = ExtResource("4_hc6b3")
+
+[node name="Organizer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Credits!"
+fit_content = true
+
+[node name="Indent" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="first" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+selection_enabled = true
+script = ExtResource("5_tld2m")
+gradient = ExtResource("6_1ue4h")
+
+[node name="Title2" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Special Thanks!"
+fit_content = true
+
+[node name="Indent2" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent2"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="second" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent2"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Bogey and Chipper for being the best of boys while I worked on this"
+fit_content = true
+script = ExtResource("5_tld2m")
+gradient = ExtResource("6_1ue4h")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("4_k3yt4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent3" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent3"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="third" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent3"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Pearl and Marina for the music I played non-stop while working on this"
+fit_content = true
+script = ExtResource("5_tld2m")
+gradient = ExtResource("6_1ue4h")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("5_317qd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent4" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent4"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="forth" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer/Indent4"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Boen for breaking the program within the first 5 minutes of receiving it"
+fit_content = true
+script = ExtResource("5_tld2m")
+gradient = ExtResource("6_1ue4h")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("5_nivvl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Credits" instance=ExtResource("6_uyi2y")]
+layout_mode = 2
+
+[node name="Controls" type="PanelContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v70vw")
+
+[node name="Organizer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls"]
+layout_mode = 2
+script = ExtResource("3_x32rg")
+
+[node name="ControlSecion" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = " Controls:"
+
+[node name="Remap" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "  Remappable:"
+
+[node name="ActionsList" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer"]
+layout_mode = 2
+
+[node name="InputButton" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList" instance=ExtResource("3_frumc")]
+layout_mode = 2
+
+[node name="NonRemap" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "  Non Remappable:"
+
+[node name="ActionsList2" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer"]
+layout_mode = 2
+
+[node name="InputButton" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton/MarginContainer/HBoxContainer" index="1"]
+text = "Confirm"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton/MarginContainer/HBoxContainer" index="3"]
+text = "Enter"
+
+[node name="InputButton2" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton2/MarginContainer/HBoxContainer" index="1"]
+text = "Menu"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton2/MarginContainer/HBoxContainer" index="3"]
+text = "ESC"
+
+[node name="InputButton3" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton3/MarginContainer/HBoxContainer" index="1"]
+text = "Edit Bot Pos/Tangent"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton3/MarginContainer/HBoxContainer" index="3"]
+text = "Mouse Left Click"
+
+[node name="InputButton4" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton4/MarginContainer/HBoxContainer" index="1"]
+text = "Edit Bot Heading"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton4/MarginContainer/HBoxContainer" index="3"]
+text = "Mouse Right Click"
+
+[node name="InputButton5" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton5/MarginContainer/HBoxContainer" index="1"]
+text = "Undo"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton5/MarginContainer/HBoxContainer" index="3"]
+text = "Ctrl+Z"
+
+[node name="InputButton6" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2" instance=ExtResource("3_frumc")]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mypsx")
+
+[node name="LabelAction" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton6/MarginContainer/HBoxContainer" index="1"]
+text = "Redo"
+
+[node name="LabelInputs" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton6/MarginContainer/HBoxContainer" index="3"]
+text = "Ctrl+Y"
+
+[node name="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls" instance=ExtResource("6_uyi2y")]
+layout_mode = 2
+
+[node name="Intro" type="PanelContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v70vw")
+
+[node name="Organizer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro"]
+layout_mode = 2
+
+[node name="ControlSecion" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro/Organizer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = " What is Marvin:"
+
+[node name="Indent" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro/Organizer/Indent"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro/Organizer/Indent"]
+custom_minimum_size = Vector2(600, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Marvin is an easy path planning for the FTC Road-Runner repository. This program allows you to easily plan and execute trajectories. You can visually drag and drop robots onto the FTC field, plan paths and spline trajectories, and insert the automatically generated code into Android Studio.
+
+"
+fit_content = true
+
+[node name="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/Intro" instance=ExtResource("6_uyi2y")]
+layout_mode = 2
+
+[node name="GettingStarted" type="PanelContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v70vw")
+
+[node name="Organizer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted"]
+layout_mode = 2
+
+[node name="Ttitle" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = " Getting Started:"
+
+[node name="CameraViews" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "  Camera Views:"
+fit_content = true
+
+[node name="Indent" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Marvin allows you to create trajectories from two different views:"
+fit_content = true
+
+[node name="Indent3" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent3"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent3"]
+custom_minimum_size = Vector2(600, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "1. Orthographic (O)
+This is probably the most intuitive way to make a trajectory. Everything is seen from a top down view and shows no height."
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("6_3rbi3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent2" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Indent2" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent2"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent2/Indent2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent2/Indent2"]
+custom_minimum_size = Vector2(600, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "2. Perspective (P)
+This view is harder to navigate, but it allows for a 3D view of the field and robots. This can be useful to see how your robot will interact with the field in the Z dimension."
+fit_content = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("7_x5cab")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent4" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent4"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent4"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Moving in Perspective view:"
+fit_content = true
+
+[node name="Indent5" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent5"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent5"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Moving in the perspective view can be initiated with the Control key by default. Use WASD for forward, left, back, and right (by default), and Space/Shift for up and down. Move the mouse cursor to rotate the camera."
+fit_content = true
+
+[node name="PlacingBots" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = " Placing Bots:"
+fit_content = true
+
+[node name="Indent17" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent17"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent17"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Important note: Hold shift while editing position/rotation to snap the movement"
+fit_content = true
+
+[node name="Indent6" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent6"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent6"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "To place a bot position of the field, left click anywhere the red \"ghost\" bot appears."
+fit_content = true
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("8_u6lfk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent7" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent7"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent7"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Before letting go of the left click, you can change the heading of the bot by moving your mouse. The bot will point to your mouse cursor until you let go of left click. You can re-edit the heading by right clicking the bot."
+fit_content = true
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("9_vlj66")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent8" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent8"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent8"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "		[font_size=16]Important note: The heading is indicated by the white box extruded from the 
+		bot. It is only there to make direction clear and doesn't contribute to the size 
+		of your bot.[font_size=20]
+
+You can also edit the tangent which will effect the direction your bot move away from your previous bot position. Edit its rotation by clicking either the red or black arrow and holding that click. The tangent will follow your mouse."
+fit_content = true
+
+[node name="Indent9" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent9"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent9"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "
+The image below demonstrates how the tangent effects the trajectory. The red tangent is the direction of the bot *leaving* the position. The black tangent is the direction the robot will come twoards a position."
+fit_content = true
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("10_1nf1n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotOrder" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = " Bot Order and Control Buttons:"
+fit_content = true
+
+[node name="Indent10" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent10"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent10"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "The order in which each position is played can be seen by the GUI demonstrated below."
+fit_content = true
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("11_1fl74")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent11" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent11"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent11"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "In the image above, we can see the starting position will be at the red robot (demonstrated by the color list). It will then go to the green and lastly the purple bot.
+
+It is possible to change this order. To do this, click on the color that matches the bot you would like the change the order of. Then either move it foward or back with the corresponding button."
+fit_content = true
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("12_p5tqm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent12" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent12"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent12"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "When you click on one of these buttons, it will also open up controls for that corresponding bot. Here you can edit the X and Y coordinate, the Tangent rotation (T), and the Heading rotation (H)."
+fit_content = true
+
+[node name="TextureRect8" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("13_grn1t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent13" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent13"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent13"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Lastly, you can delete the bot by clicking the large X."
+fit_content = true
+
+[node name="PlacingBots2" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = " Sidebar tools:"
+fit_content = true
+
+[node name="Indent14" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent14"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent14"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "The sidebar offers various tools while making your trajectories."
+fit_content = true
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("14_5h0x3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indent15" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent15"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent15"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Bot Dimensions:"
+fit_content = true
+
+[node name="DoubleIndent" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Width: Edit the width of the robot (X)
+Length: Edit the length of the robot (Y)
+Height: Edit the height of the robot (Z)"
+fit_content = true
+
+[node name="Indent16" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent16"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent16"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Grid Snap:"
+fit_content = true
+
+[node name="DoubleIndent2" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent2"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "When holding shift, the robot will snap to the specified amount of inches"
+fit_content = true
+
+[node name="Indent18" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent18"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent18"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Preview Speed:"
+fit_content = true
+
+[node name="DoubleIndent3" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent3"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Adjust the speed of the preview animation (activated using 'q' by default)"
+fit_content = true
+
+[node name="Indent19" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent19"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent19"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Update Colors:"
+fit_content = true
+
+[node name="DoubleIndent4" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent4"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Reset colors of robots to reset gradient (Red-Purple) in order of movement. 
+When set to off, the robots will remain with the color they are created with."
+fit_content = true
+
+[node name="Indent20" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent20"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent20"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Save File:"
+fit_content = true
+
+[node name="DoubleIndent5" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent5"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Opens a file dialogue. Choose a directory and input a file name, then click \"save.\" Pressing \"Ctrl+C\" will now save a .yaml with the current path. The file will be overwritten every time this button combination is pressed. You can make a new file at any time by re-clicking the button and setting a new save path.
+
+Important note: These files are compatable with Road Runner GUI. To use Road Runner's simulation, load these files into RR-GUI."
+fit_content = true
+
+[node name="Indent21" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent21"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent21"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Load Files:"
+fit_content = true
+
+[node name="DoubleIndent6" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent6"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Opens a file dialogue. Load any .yaml file by double clicking the file. 
+NOTE: Loading a new file deletes current path! Use Ctrl+z to bring back your path.
+
+IMPORTANT NOTE: Marvin files are compatable with Road Runner GUI files."
+fit_content = true
+
+[node name="Indent22" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent22"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/Indent22"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Save on Exit:"
+fit_content = true
+
+[node name="DoubleIndent7" type="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ExplainText" type="RichTextLabel" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted/Organizer/DoubleIndent7"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = SubResource("Theme_ss0b6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "When enabled, the program will automatically save the current path when Marvin is closed. On launch, the file will be loaded up."
+fit_content = true
+
+[node name="HBoxContainer" parent="CanvasLayer/Panel/ScrollConainer/ContainerManager/GettingStarted" instance=ExtResource("6_uyi2y")]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ppwqk")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton"]
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton2"]
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton3"]
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton4"]
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton5"]
+[editable path="CanvasLayer/Panel/ScrollConainer/ContainerManager/Controls/Organizer/ActionsList2/InputButton6"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://om0qffpmo2xy"]
+
+[ext_resource type="Script" path="res://expandInstructionsButton.gd" id="1_cu4s6"]
+[ext_resource type="Texture2D" uid="uid://kvk0nayrr55b" path="res://smallArrow.png" id="2_juoux"]
+[ext_resource type="Texture2D" uid="uid://btobghtyfkcu1" path="res://new_image_texture.tres" id="2_s8gov"]
+
+[sub_resource type="Animation" id="Animation_33ey6"]
+resource_name = "arrowTurn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_4ggj6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1fcdj"]
+_data = {
+"RESET": SubResource("Animation_4ggj6"),
+"arrowTurn": SubResource("Animation_33ey6")
+}
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 54.0
+offset_bottom = 54.0
+rotation = 3.14159
+pivot_offset = Vector2(29, 25)
+script = ExtResource("1_cu4s6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("2_s8gov")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Button"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("2_juoux")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1fcdj")
+}
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

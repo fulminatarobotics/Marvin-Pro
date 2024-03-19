@@ -1,0 +1,1044 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsaieocvuwi64"]
+
+[ext_resource type="Script" path="res://setGlobalDim.gd" id="1_s147x"]
+[ext_resource type="Script" path="res://crossHair.gd" id="2_1e2bm"]
+[ext_resource type="Theme" uid="uid://1j82cvgd30hl" path="res://GUIControls.tres" id="2_8l7ij"]
+[ext_resource type="Script" path="res://deleteAll.gd" id="3_8jvap"]
+[ext_resource type="Texture2D" uid="uid://dyuw4olu4jvkw" path="res://Eo_circle_blue_arrow-left.png" id="5_ogvkf"]
+[ext_resource type="Script" path="res://ExportRRButton.gd" id="6_rgegd"]
+[ext_resource type="Script" path="res://LoadFile.gd" id="7_emeb2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkak4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Animation" id="Animation_7hm2f"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/FoldInButton:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-400, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CanvasLayer/FoldInButton:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-440, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasLayer/FoldInButton:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-182, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/RichTextLabel:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CanvasLayer/RichTextLabel:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CanvasLayer/RichTextLabel2:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CanvasLayer/RichTextLabel2:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(164, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../CanvasLayer/RichTextLabel3:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../CanvasLayer/RichTextLabel3:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../CanvasLayer/RichTextLabel4:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../CanvasLayer/RichTextLabel4:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(283, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../CanvasLayer/WidthSelection:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../CanvasLayer/WidthSelection:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../CanvasLayer/LengthSelection:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../CanvasLayer/LengthSelection:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(89, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../CanvasLayer/HeightSelection:position:x")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../CanvasLayer/HeightSelection:position:y")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../CanvasLayer/SnappedSelection:position:x")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../CanvasLayer/SnappedSelection:position:y")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(192, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../CanvasLayer/CheckButton:position:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-125, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../CanvasLayer/CheckButton:position:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(301, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/23/type = "bezier"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../CanvasLayer/speedSlider:position:x")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/24/type = "bezier"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../CanvasLayer/speedSlider:position:y")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(246, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/25/type = "bezier"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../CanvasLayer/RichTextLabel5:position:x")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/26/type = "bezier"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../CanvasLayer/RichTextLabel5:position:y")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(340, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/27/type = "bezier"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../CanvasLayer/ExportRRButton:position:x")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/28/type = "bezier"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("../CanvasLayer/ExportRRButton:position:y")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(373, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/29/type = "bezier"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("../CanvasLayer/LoadFileButton:position:x")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-136, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/30/type = "bezier"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("../CanvasLayer/LoadFileButton:position:y")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(432, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/31/type = "bezier"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("../CanvasLayer/RichTextLabel6:position:x")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/32/type = "bezier"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("../CanvasLayer/RichTextLabel6:position:y")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(407, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qotda"]
+resource_name = "foldAway"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, -182, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasLayer/RichTextLabel:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer/RichTextLabel:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0, 21, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasLayer/RichTextLabel2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/RichTextLabel2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(164, -0.25, 0, 0.25, 0, 164, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CanvasLayer/RichTextLabel3:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CanvasLayer/RichTextLabel3:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(229, -0.25, 0, 0.25, 0, 229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CanvasLayer/RichTextLabel4:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../CanvasLayer/RichTextLabel4:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(283, -0.25, 0, 0.25, 0, 283, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../CanvasLayer/WidthSelection:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, -138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../CanvasLayer/WidthSelection:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0, 48, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../CanvasLayer/LengthSelection:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, -138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../CanvasLayer/LengthSelection:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(89, -0.25, 0, 0.25, 0, 89, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../CanvasLayer/HeightSelection:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, -138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../CanvasLayer/HeightSelection:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../CanvasLayer/SnappedSelection:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, -138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../CanvasLayer/SnappedSelection:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(192, -0.25, 0, 0.25, 0, 192, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../CanvasLayer/CheckButton:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(59, -0.25, 0, 0.25, 0, -125, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../CanvasLayer/CheckButton:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(301, -0.25, 0, 0.25, 0, 301, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../CanvasLayer/speedSlider:position:x")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, -138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../CanvasLayer/speedSlider:position:y")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(246, -0.25, 0, 0.25, 0, 246, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../CanvasLayer/FoldInButton:position:x")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-400, -0.25, 0, 0.25, 0, -584, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/23/type = "bezier"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../CanvasLayer/FoldInButton:position:y")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-440, -0.25, 0, 0.25, 0, -440, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/24/type = "bezier"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../CanvasLayer/FoldInButton:rotation")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/25/type = "bezier"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../CanvasLayer/RichTextLabel5:position:x")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/26/type = "bezier"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../CanvasLayer/RichTextLabel5:position:y")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(340, -0.25, 0, 0.25, 0, 340, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/27/type = "bezier"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../CanvasLayer/ExportRRButton:position:x")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0, -136, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/28/type = "bezier"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("../CanvasLayer/ExportRRButton:position:y")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(373, -0.25, 0, 0.25, 0, 373, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/29/type = "bezier"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("../CanvasLayer/LoadFileButton:position:x")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0, -136, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/30/type = "bezier"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("../CanvasLayer/LoadFileButton:position:y")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(432, -0.25, 0, 0.25, 0, 432, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/31/type = "bezier"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("../CanvasLayer/RichTextLabel6:position:x")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(23, -0.25, 0, 0.25, 0, -161, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/32/type = "bezier"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("../CanvasLayer/RichTextLabel6:position:y")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(407, -0.25, 0, 0.25, 0, 407, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yikym"]
+_data = {
+"RESET": SubResource("Animation_7hm2f"),
+"foldAway": SubResource("Animation_qotda")
+}
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -1099.0
+offset_bottom = -382.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Panel2" type="Panel" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -182.0
+offset_top = 3.0
+offset_right = -14.0
+offset_bottom = 468.0
+mouse_filter = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_s147x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = -161.0
+offset_top = 21.0
+offset_right = -11.0
+offset_bottom = 50.0
+theme_override_font_sizes/normal_font_size = 0
+text = "Bot Dimensions:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 164.0
+offset_right = 141.0
+offset_bottom = 193.0
+text = "Grid Snap:"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 229.0
+offset_right = 160.045
+offset_bottom = 258.0
+text = "Preview Speed:"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = -161.0
+offset_top = 283.0
+offset_right = -43.0
+offset_bottom = 312.0
+text = "Update Colors:"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = -161.0
+offset_top = 340.0
+offset_right = -43.0
+offset_bottom = 369.0
+text = "Export RR-GUI"
+
+[node name="WidthSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = -138.0
+offset_top = 48.0
+offset_right = -14.0
+offset_bottom = 79.0
+mouse_filter = 1
+theme = ExtResource("2_8l7ij")
+value = 12.0
+prefix = "Width:"
+suffix = "in"
+select_all_on_focus = true
+
+[node name="LengthSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = -138.0
+offset_top = 89.0
+offset_right = -14.0
+offset_bottom = 120.0
+mouse_filter = 1
+theme = ExtResource("2_8l7ij")
+value = 12.0
+prefix = "Length:"
+suffix = "in"
+select_all_on_focus = true
+
+[node name="HeightSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = -138.0
+offset_top = 130.0
+offset_right = -14.0
+offset_bottom = 161.0
+mouse_filter = 1
+theme = ExtResource("2_8l7ij")
+value = 12.0
+prefix = "Height"
+suffix = "in"
+select_all_on_focus = true
+
+[node name="SnappedSelection" type="SpinBox" parent="CanvasLayer"]
+offset_left = -138.0
+offset_top = 192.0
+offset_right = -14.0
+offset_bottom = 223.0
+mouse_filter = 1
+value = 12.0
+prefix = "Clip:"
+suffix = "in"
+select_all_on_focus = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 635.0
+offset_top = 355.0
+offset_right = 645.0
+offset_bottom = 365.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rkak4")
+script = ExtResource("2_1e2bm")
+
+[node name="MouseStuff" type="Control" parent="CanvasLayer"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 198.0
+offset_top = 23.0
+offset_right = 1071.0
+offset_bottom = 131.0
+mouse_filter = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+z_index = -2
+offset_left = 198.0
+offset_top = 23.0
+offset_right = 1071.0
+offset_bottom = 81.0
+vertical_scroll_mode = 0
+
+[node name="botListContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer"]
+z_index = -2
+custom_minimum_size = Vector2(873, 100)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+offset_left = -125.0
+offset_top = 301.0
+offset_right = -74.0
+offset_bottom = 331.0
+mouse_filter = 1
+
+[node name="speedSlider" type="HSlider" parent="CanvasLayer"]
+offset_left = -138.0
+offset_top = 246.0
+offset_right = -42.0
+offset_bottom = 288.0
+mouse_filter = 1
+theme = ExtResource("2_8l7ij")
+max_value = 2.0
+step = 0.01
+value = 0.5
+
+[node name="deleteAll" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_8jvap")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/deleteAll"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 212.0
+offset_right = 975.0
+offset_bottom = 354.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Pressing r on the keyboard removes all bots...
+
+Confirm?"
+fit_content = true
+
+[node name="yesDeleteBut" type="Button" parent="CanvasLayer/deleteAll"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 386.0
+offset_right = 604.0
+offset_bottom = 472.0
+text = "Yes, delete all"
+
+[node name="noKeepBut" type="Button" parent="CanvasLayer/deleteAll"]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 386.0
+offset_right = 815.0
+offset_bottom = 472.0
+text = "No, keep current"
+
+[node name="FoldInButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = -400.0
+offset_top = -440.0
+offset_right = 800.0
+offset_bottom = 760.0
+scale = Vector2(0.02, 0.02)
+pivot_offset = Vector2(600, 600)
+texture_normal = ExtResource("5_ogvkf")
+
+[node name="ExportRRButton" type="Button" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = 373.0
+offset_right = 173.0
+offset_bottom = 404.0
+mouse_filter = 1
+text = "Save path..."
+text_overrun_behavior = 3
+script = ExtResource("6_rgegd")
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer/ExportRRButton"]
+mode = 3
+initial_position = 1
+size = Vector2i(1080, 520)
+ok_button_text = "Save"
+access = 2
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = -161.0
+offset_top = 407.0
+offset_right = -43.0
+offset_bottom = 436.0
+text = "Load File"
+
+[node name="LoadFileButton" type="Button" parent="CanvasLayer"]
+offset_left = -136.0
+offset_top = 432.0
+offset_right = -11.0
+offset_bottom = 463.0
+mouse_filter = 1
+text = "Load file..."
+text_overrun_behavior = 3
+script = ExtResource("7_emeb2")
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer/LoadFileButton"]
+mode = 3
+title = "Open a File"
+initial_position = 1
+size = Vector2i(1080, 520)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel2")
+libraries = {
+"": SubResource("AnimationLibrary_yikym")
+}
+
+[connection signal="mouse_entered" from="." to="CanvasLayer" method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="." to="CanvasLayer" method="_on_settings_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/WidthSelection" to="CanvasLayer" method="_on_width_selection_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/WidthSelection" to="CanvasLayer" method="_on_width_selection_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/LengthSelection" to="CanvasLayer" method="_on_length_selection_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/LengthSelection" to="CanvasLayer" method="_on_length_selection_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/HeightSelection" to="CanvasLayer" method="_on_height_selection_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/HeightSelection" to="CanvasLayer" method="_on_height_selection_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/SnappedSelection" to="CanvasLayer" method="_on_snapped_selection_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/SnappedSelection" to="CanvasLayer" method="_on_snapped_selection_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/MouseStuff" to="CanvasLayer" method="_on_mouse_stuff_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/MouseStuff" to="CanvasLayer" method="_on_mouse_stuff_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ScrollContainer" to="CanvasLayer" method="_on_scroll_container_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ScrollContainer" to="CanvasLayer" method="_on_scroll_container_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/CheckButton" to="CanvasLayer" method="_on_check_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/CheckButton" to="CanvasLayer" method="_on_check_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/speedSlider" to="CanvasLayer" method="_on_speed_slider_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/speedSlider" to="CanvasLayer" method="_on_speed_slider_mouse_exited"]
+[connection signal="value_changed" from="CanvasLayer/speedSlider" to="CanvasLayer" method="_on_speed_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/deleteAll/yesDeleteBut" to="CanvasLayer/deleteAll" method="_on_yes_delete_but_pressed"]
+[connection signal="pressed" from="CanvasLayer/deleteAll/noKeepBut" to="CanvasLayer/deleteAll" method="_on_no_keep_but_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/FoldInButton" to="CanvasLayer" method="_on_fold_in_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/FoldInButton" to="CanvasLayer" method="_on_fold_in_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/FoldInButton" to="CanvasLayer" method="_on_fold_in_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/ExportRRButton" to="CanvasLayer" method="_on_export_rr_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ExportRRButton" to="CanvasLayer" method="_on_export_rr_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/ExportRRButton" to="CanvasLayer/ExportRRButton" method="_on_pressed"]
+[connection signal="dir_selected" from="CanvasLayer/ExportRRButton/FileDialog" to="CanvasLayer/ExportRRButton" method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="CanvasLayer/ExportRRButton/FileDialog" to="CanvasLayer/ExportRRButton" method="_on_file_dialog_file_selected"]
+[connection signal="mouse_entered" from="CanvasLayer/LoadFileButton" to="CanvasLayer" method="_on_export_rr_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LoadFileButton" to="CanvasLayer" method="_on_export_rr_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/LoadFileButton" to="CanvasLayer/LoadFileButton" method="_on_pressed"]
+[connection signal="file_selected" from="CanvasLayer/LoadFileButton/FileDialog" to="CanvasLayer/LoadFileButton" method="_on_file_dialog_file_selected"]

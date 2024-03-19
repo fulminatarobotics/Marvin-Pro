@@ -1,0 +1,14 @@
+Label3D
+CollisionShape3D
+StaticBody3D
+Node3D
+FileDialog
+Button
+Label
+Control
+AnimationPlayer
+TextureRect
+TextureButton
+VBoxContainer
+HBoxContainer
+MarginContainer

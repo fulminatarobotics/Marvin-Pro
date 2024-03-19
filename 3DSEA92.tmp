@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://wn0ufqdo7dwj"]
+
+[ext_resource type="Texture2D" uid="uid://bsdjk32xweudv" path="res://custom-centerstage-field-diagrams-works-with-meepmeep-v0-osvn5chufpob1.png" id="1_l1ipg"]
+[ext_resource type="Script" path="res://Camera.gd" id="1_to163"]
+[ext_resource type="Script" path="res://Perspective.gd" id="3_p46a0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hcqjj"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4ieei"]
+sky_material = SubResource("ProceduralSkyMaterial_hcqjj")
+
+[sub_resource type="Environment" id="Environment_p83l1"]
+background_mode = 2
+sky = SubResource("Sky_4ieei")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7jxq"]
+albedo_texture = ExtResource("1_l1ipg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s0oqx"]
+size = Vector2(12, 12)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xrofh"]
+data = PackedVector3Array(6, 0, 6, -6, 0, 6, 6, 0, -6, -6, 0, 6, -6, 0, -6, 6, 0, -6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eeb4p"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p83l1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_d7jxq")
+mesh = SubResource("PlaneMesh_s0oqx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xrofh")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715398, 0)
+script = ExtResource("1_to163")
+
+[node name="Neck" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+script = ExtResource("3_p46a0")
+
+[node name="ghostBox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688554, 0)
+mesh = SubResource("BoxMesh_eeb4p")
